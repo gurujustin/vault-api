@@ -5,6 +5,7 @@ const { getSpellApys } = require('./getSpellApys');
 const getBalancerArbApys = require('./getBalancerArbApys');
 const getStargateArbApys = require('./getStargateArbApys');
 const getRipaeApys = require('./getRipaeApys');
+const getRodeoApys = require('./getRodeoApys');
 const { getGmxV2Apys } = require('./getGmxV2Apys');
 const { getGmxApys } = require('./getGmxApys');
 const { getHopApys } = require('./getHopApys');
@@ -40,6 +41,7 @@ const getApys = [
   getGmxV2Apys,
   getGmxApys,
   getRipaeApys,
+  getRodeoApys,
   getSushiLpApys,
   getCurveApys,
   getConvexApys,

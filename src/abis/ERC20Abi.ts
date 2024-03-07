@@ -51,6 +51,20 @@ const ERC20Abi = [
     type: 'function',
   },
   {
+    constant: true,
+    inputs: [],
+    name: 'getTotalLiquidity',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256',
+      },
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
     constant: false,
     inputs: [
       {
