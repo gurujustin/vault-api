@@ -10,6 +10,7 @@ const HOURLY_HPY = 8760;
 const DAILY_HPY = 365;
 const ETH_HPY = DAILY_HPY / 3;
 const WEEKLY_HPY = 52;
+const MONTH_HPY = 12;
 
 const FORTUBE_REQ_TOKENS = 'https://bsc.for.tube/api/v2/bank_tokens';
 const FORTUBE_REQ_MARKETS = 'https://bsc.for.tube/api/v1/bank/markets?mode=extended';
@@ -191,31 +192,31 @@ const MANTLE_VAULTS_ENDPOINT =
   'https://raw.githubusercontent.com/beefyfinance/beefy-v2/prod/src/config/vault/mantle.json';
 
 const MULTICHAIN_ENDPOINTS: Partial<Record<ApiChain, string>> = {
-  bsc: BSC_VAULTS_ENDPOINT,
-  avax: AVAX_VAULTS_ENDPOINT,
-  polygon: POLYGON_VAULTS_ENDPOINT,
-  fantom: FANTOM_VAULTS_ENDPOINT,
-  one: ONE_VAULTS_ENDPOINT,
-  arbitrum: ARBITRUM_VAULTS_ENDPOINT,
-  celo: CELO_VAULTS_ENDPOINT,
-  moonriver: MOONRIVER_VAULTS_ENDPOINT,
-  cronos: CRONOS_VAULTS_ENDPOINT,
-  aurora: AURORA_VAULTS_ENDPOINT,
-  fuse: FUSE_VAULTS_ENDPOINT,
-  metis: METIS_VAULTS_ENDPOINT,
-  moonbeam: MOONBEAM_VAULTS_ENDPOINT,
-  emerald: EMERALD_VAULTS_ENDPOINT,
-  optimism: OPTIMISM_VAULTS_ENDPOINT,
-  heco: HECO_VAULTS_ENDPOINT,
-  kava: KAVA_VAULTS_ENDPOINT,
-  ethereum: ETHEREUM_VAULTS_ENDPOINT,
-  canto: CANTO_VAULTS_ENDPOINT,
-  zksync: ZKSYNC_VAULTS_ENDPOINT,
-  zkevm: ZKEVM_VAULTS_ENDPOINT,
-  base: BASE_VAULTS_ENDPOINT,
-  gnosis: GNOSIS_VAULTS_ENDPOINT,
-  linea: LINEA_VAULTS_ENDPOINT,
-  mantle: MANTLE_VAULTS_ENDPOINT,
+  // bsc: BSC_VAULTS_ENDPOINT,
+  // avax: AVAX_VAULTS_ENDPOINT,
+  // polygon: POLYGON_VAULTS_ENDPOINT,
+  // fantom: FANTOM_VAULTS_ENDPOINT,
+  // one: ONE_VAULTS_ENDPOINT,
+  // arbitrum: ARBITRUM_VAULTS_ENDPOINT,
+  // celo: CELO_VAULTS_ENDPOINT,
+  // moonriver: MOONRIVER_VAULTS_ENDPOINT,
+  // cronos: CRONOS_VAULTS_ENDPOINT,
+  // aurora: AURORA_VAULTS_ENDPOINT,
+  // fuse: FUSE_VAULTS_ENDPOINT,
+  // metis: METIS_VAULTS_ENDPOINT,
+  // moonbeam: MOONBEAM_VAULTS_ENDPOINT,
+  // emerald: EMERALD_VAULTS_ENDPOINT,
+  // optimism: OPTIMISM_VAULTS_ENDPOINT,
+  // heco: HECO_VAULTS_ENDPOINT,
+  // kava: KAVA_VAULTS_ENDPOINT,
+  // ethereum: ETHEREUM_VAULTS_ENDPOINT,
+  // canto: CANTO_VAULTS_ENDPOINT,
+  // zksync: ZKSYNC_VAULTS_ENDPOINT,
+  // zkevm: ZKEVM_VAULTS_ENDPOINT,
+  // base: BASE_VAULTS_ENDPOINT,
+  // gnosis: GNOSIS_VAULTS_ENDPOINT,
+  // linea: LINEA_VAULTS_ENDPOINT,
+  // mantle: MANTLE_VAULTS_ENDPOINT,
 } as const;
 
 const EXCLUDED_IDS_FROM_TVL = ['venus-wbnb'];
@@ -303,6 +304,7 @@ export {
   HOURLY_HPY,
   DAILY_HPY,
   WEEKLY_HPY,
+  MONTH_HPY,
   FORTUBE_REQ_TOKENS,
   FORTUBE_REQ_MARKETS,
   FORTUBE_API_TOKEN,

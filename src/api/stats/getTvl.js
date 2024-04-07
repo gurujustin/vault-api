@@ -84,106 +84,106 @@ const REFRESH_INTERVAL = 15 * 60 * 1000;
 let tvl = {};
 
 const chains = [
-  {
-    chainId: BSC_CHAIN_ID,
-    vaultsEndpoint: BSC_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: POLYGON_CHAIN_ID,
-    vaultsEndpoint: POLYGON_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: FANTOM_CHAIN_ID,
-    vaultsEndpoint: FANTOM_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: HECO_CHAIN_ID,
-    vaultsEndpoint: HECO_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: AVAX_CHAIN_ID,
-    vaultsEndpoint: AVAX_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: ONE_CHAIN_ID,
-    vaultsEndpoint: ONE_VAULTS_ENDPOINT,
-  },
+  // {
+  //   chainId: BSC_CHAIN_ID,
+  //   vaultsEndpoint: BSC_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: POLYGON_CHAIN_ID,
+  //   vaultsEndpoint: POLYGON_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: FANTOM_CHAIN_ID,
+  //   vaultsEndpoint: FANTOM_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: HECO_CHAIN_ID,
+  //   vaultsEndpoint: HECO_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: AVAX_CHAIN_ID,
+  //   vaultsEndpoint: AVAX_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: ONE_CHAIN_ID,
+  //   vaultsEndpoint: ONE_VAULTS_ENDPOINT,
+  // },
   {
     chainId: ARBITRUM_CHAIN_ID,
     vaultsEndpoint: ARBITRUM_VAULTS_ENDPOINT,
   },
-  {
-    chainId: CELO_CHAIN_ID,
-    vaultsEndpoint: CELO_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: MOONRIVER_CHAIN_ID,
-    vaultsEndpoint: MOONRIVER_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: CRONOS_CHAIN_ID,
-    vaultsEndpoint: CRONOS_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: AURORA_CHAIN_ID,
-    vaultsEndpoint: AURORA_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: FUSE_CHAIN_ID,
-    vaultsEndpoint: FUSE_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: METIS_CHAIN_ID,
-    vaultsEndpoint: METIS_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: MOONBEAM_CHAIN_ID,
-    vaultsEndpoint: MOONBEAM_VAULTS_ENDPOINT,
-  },
-  /*{
-    chainId: EMERALD_CHAIN_ID,
-    vaultsEndpoint: EMERALD_VAULTS_ENDPOINT,
-  },*/
-  {
-    chainId: OPTIMISM_CHAIN_ID,
-    vaultsEndpoint: OPTIMISM_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: KAVA_CHAIN_ID,
-    vaultsEndpoint: KAVA_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: ETH_CHAIN_ID,
-    vaultsEndpoint: ETHEREUM_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: CANTO_CHAIN_ID,
-    vaultsEndpoint: CANTO_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: ZKSYNC_CHAIN_ID,
-    vaultsEndpoint: ZKSYNC_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: ZKEVM_CHAIN_ID,
-    vaultsEndpoint: ZKEVM_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: BASE_CHAIN_ID,
-    vaultsEndpoint: BASE_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: GNOSIS_CHAIN_ID,
-    vaultsEndpoint: GNOSIS_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: LINEA_CHAIN_ID,
-    vaultsEndpoint: LINEA_VAULTS_ENDPOINT,
-  },
-  {
-    chainId: MANTLE_CHAIN_ID,
-    vaultsEndpoint: MANTLE_VAULTS_ENDPOINT,
-  },
+  // {
+  //   chainId: CELO_CHAIN_ID,
+  //   vaultsEndpoint: CELO_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: MOONRIVER_CHAIN_ID,
+  //   vaultsEndpoint: MOONRIVER_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: CRONOS_CHAIN_ID,
+  //   vaultsEndpoint: CRONOS_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: AURORA_CHAIN_ID,
+  //   vaultsEndpoint: AURORA_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: FUSE_CHAIN_ID,
+  //   vaultsEndpoint: FUSE_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: METIS_CHAIN_ID,
+  //   vaultsEndpoint: METIS_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: MOONBEAM_CHAIN_ID,
+  //   vaultsEndpoint: MOONBEAM_VAULTS_ENDPOINT,
+  // },
+  // /*{
+  //   chainId: EMERALD_CHAIN_ID,
+  //   vaultsEndpoint: EMERALD_VAULTS_ENDPOINT,
+  // },*/
+  // {
+  //   chainId: OPTIMISM_CHAIN_ID,
+  //   vaultsEndpoint: OPTIMISM_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: KAVA_CHAIN_ID,
+  //   vaultsEndpoint: KAVA_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: ETH_CHAIN_ID,
+  //   vaultsEndpoint: ETHEREUM_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: CANTO_CHAIN_ID,
+  //   vaultsEndpoint: CANTO_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: ZKSYNC_CHAIN_ID,
+  //   vaultsEndpoint: ZKSYNC_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: ZKEVM_CHAIN_ID,
+  //   vaultsEndpoint: ZKEVM_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: BASE_CHAIN_ID,
+  //   vaultsEndpoint: BASE_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: GNOSIS_CHAIN_ID,
+  //   vaultsEndpoint: GNOSIS_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: LINEA_CHAIN_ID,
+  //   vaultsEndpoint: LINEA_VAULTS_ENDPOINT,
+  // },
+  // {
+  //   chainId: MANTLE_CHAIN_ID,
+  //   vaultsEndpoint: MANTLE_VAULTS_ENDPOINT,
+  // },
 ];
 
 const CACHE_KEY = 'TVL';

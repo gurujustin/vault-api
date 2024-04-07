@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
 import { compound } from '../../../utils/compound';
 
-import { BASE_HPY } from '../../../constants';
+import { BASE_HPY, MONTH_HPY } from '../../../constants';
 import { getTotalPerformanceFeeForVault } from '../../vaults/getVaultFees';
 
 export interface ApyBreakdown {
@@ -53,18 +53,20 @@ export const getApyBreakdown = (
       liquidStakingAprs && composablePoolAprs
         ? liquidStakingApr + composablePoolApr
         : liquidStakingAprs
-        ? liquidStakingApr
-        : composablePoolAprs
-        ? composablePoolApr
-        : 0;
+          ? liquidStakingApr
+          : composablePoolAprs
+            ? composablePoolApr
+            : 0;
 
+    const isOrangePool = pool.name == 'orange-weth-usdc'
+    const HPY = isOrangePool ? MONTH_HPY : BASE_HPY
     const provFee = providerFee[i] == undefined ? providerFee : providerFee[i].toNumber();
     const simpleApr = farmAprs[i]?.toNumber();
     const beefyPerformanceFee =
       pool.beefyFee == undefined ? getTotalPerformanceFeeForVault(pool.name) : pool.beefyFee;
     const shareAfterBeefyPerformanceFee = 1 - beefyPerformanceFee;
     const vaultApr = simpleApr * shareAfterBeefyPerformanceFee;
-    let vaultApy = compound(simpleApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee);
+    let vaultApy = compound(simpleApr, HPY, 1, shareAfterBeefyPerformanceFee);
 
     let tradingApr: number | undefined = 0;
     if (tradingAprs != null) {
@@ -76,14 +78,14 @@ export const getApyBreakdown = (
     }
 
     const totalApy =
-      getFarmWithTradingFeesApy(simpleApr, tradingApr, BASE_HPY, 1, shareAfterBeefyPerformanceFee) +
+      getFarmWithTradingFeesApy(simpleApr, tradingApr, HPY, 1, shareAfterBeefyPerformanceFee) +
       extraApr;
 
     // Add token to APYs object
     result.apys[pool.name] = totalApy;
     result.apyBreakdowns[pool.name] = {
       vaultApr: vaultApr,
-      compoundingsPerYear: BASE_HPY,
+      compoundingsPerYear: HPY,
       beefyPerformanceFee: beefyPerformanceFee,
       vaultApy: vaultApy,
       lpFee: provFee,

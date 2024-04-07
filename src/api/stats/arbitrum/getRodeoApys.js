@@ -20,7 +20,6 @@ const getRodeoApys = async () => {
   const farmAprs = await Promise.all(promises);
 
   const res = getApyBreakdown(pools, {}, farmAprs);
-  console.log(res)
 
   return res;
 };
@@ -45,7 +44,6 @@ const getTotalStakedInUsd = async (
     tokenPrice = await fetchPrice({ oracle, id: oracleId });
   }
 
-  console.log(totalStaked.toString(), tokenPrice.toString())
   return totalStaked.times(tokenPrice).dividedBy(decimals);
 };
 
@@ -97,8 +95,9 @@ const getPoolApy = async pool => {
     getTotalStakedInUsd(pool.address, pool.oracle, pool.oracleId, pool.decimals, pool.chainId),
   ]);
 
-  console.log("*******************************************", rate, yearlyRewardsInUsd.dividedBy(totalStakedInUsd).toString(), lentAmount.toString(), borrowedAmount.toString(), utilization, yearlyRewardsInUsd.dividedBy(totalStakedInUsd).plus(rate / 1e10).toString())
-  return yearlyRewardsInUsd.dividedBy(totalStakedInUsd).plus(rate / 1e10);
+  const multiplier = pool.name == "rodeo-arb-USDC.e" ? 0.8 : 1
+
+  return yearlyRewardsInUsd.dividedBy(totalStakedInUsd).plus(rate / 1e10).times(multiplier);
 };
 
 module.exports = getRodeoApys;
