@@ -6,6 +6,7 @@ const getBalancerArbApys = require('./getBalancerArbApys');
 const getStargateArbApys = require('./getStargateArbApys');
 const getRipaeApys = require('./getRipaeApys');
 const getRodeoApys = require('./getRodeoApys');
+const getDolomiteApys = require('./getDolomiteApys');
 const getOrangeApys = require('./getOrangeApys');
 const { getGmxV2Apys } = require('./getGmxV2Apys');
 const { getGmxApys } = require('./getGmxApys');
@@ -29,35 +30,36 @@ const { getArbSiloApys } = require('./getArbitrumSiloApys');
 const { getEquilibriaApys } = require('../common/getEquilibriaApys');
 
 const getApys = [
-  getArbSiloApys,
-  getMerklGammaApys,
-  getUniswapGammaApys,
-  getJoeAutoArbApys,
-  getAuraArbitrumApys,
-  getKyberArbitrumApys,
-  getGnsApys,
-  getHopApys,
-  getHopRplApys,
-  () => getEquilibriaApys(require('../../../data/arbitrum/equilibriaPools.json')),
+  // getArbSiloApys,
+  // getMerklGammaApys,
+  // getUniswapGammaApys,
+  // getJoeAutoArbApys,
+  // getAuraArbitrumApys,
+  // getKyberArbitrumApys,
+  // getGnsApys,
+  // getHopApys,
+  // getHopRplApys,
+  // () => getEquilibriaApys(require('../../../data/arbitrum/equilibriaPools.json')),
   getGmxV2Apys,
   getGmxApys,
-  getRipaeApys,
+  // getRipaeApys,
   getRodeoApys,
+  getDolomiteApys,
   getOrangeApys,
-  getSushiLpApys,
-  getCurveApys,
-  getConvexApys,
-  getSushiMimApys,
-  getSpellApys,
-  getBalancerArbApys,
-  getStargateArbApys,
-  getSwapFishApys,
-  getSolidLizardApys,
-  getRamsesApys,
-  getChronosApys,
-  getArbidexApys,
-  getBunniArbApys,
-  getArbCompoundV3Apys,
+  // getSushiLpApys,
+  // getCurveApys,
+  // getConvexApys,
+  // getSushiMimApys,
+  // getSpellApys,
+  // getBalancerArbApys,
+  // getStargateArbApys,
+  // getSwapFishApys,
+  // getSolidLizardApys,
+  // getRamsesApys,
+  // getChronosApys,
+  // getArbidexApys,
+  // getBunniArbApys,
+  // getArbCompoundV3Apys,
 ];
 
 const getArbitrumApys = async () => {

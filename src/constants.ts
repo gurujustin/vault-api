@@ -11,6 +11,7 @@ const DAILY_HPY = 365;
 const ETH_HPY = DAILY_HPY / 3;
 const WEEKLY_HPY = 52;
 const MONTH_HPY = 12;
+const HALF_HPY = 2;
 
 const FORTUBE_REQ_TOKENS = 'https://bsc.for.tube/api/v2/bank_tokens';
 const FORTUBE_REQ_MARKETS = 'https://bsc.for.tube/api/v1/bank/markets?mode=extended';
@@ -299,6 +300,7 @@ export {
   MANTLE_RPC,
   MANTLE_CHAIN_ID,
   MANTLE_VAULTS_ENDPOINT,
+  HALF_HPY,
   BASE_HPY,
   MINUTELY_HPY,
   HOURLY_HPY,

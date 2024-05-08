@@ -3,7 +3,7 @@ import BigNumber from 'bignumber.js';
 import { getFarmWithTradingFeesApy } from '../../../utils/getFarmWithTradingFeesApy';
 import { compound } from '../../../utils/compound';
 
-import { BASE_HPY, MONTH_HPY } from '../../../constants';
+import { BASE_HPY, DAILY_HPY, MONTH_HPY, HALF_HPY } from '../../../constants';
 import { getTotalPerformanceFeeForVault } from '../../vaults/getVaultFees';
 
 export interface ApyBreakdown {
@@ -59,7 +59,8 @@ export const getApyBreakdown = (
             : 0;
 
     const isOrangePool = pool.name == 'orange-weth-usdc'
-    const HPY = isOrangePool ? MONTH_HPY : BASE_HPY
+    const isDolomitePool = pool.name.includes("dolomite");
+    const HPY = isOrangePool ? HALF_HPY : isDolomitePool ? DAILY_HPY : BASE_HPY
     const provFee = providerFee[i] == undefined ? providerFee : providerFee[i].toNumber();
     const simpleApr = farmAprs[i]?.toNumber();
     const beefyPerformanceFee =
@@ -81,6 +82,7 @@ export const getApyBreakdown = (
       getFarmWithTradingFeesApy(simpleApr, tradingApr, HPY, 1, shareAfterBeefyPerformanceFee) +
       extraApr;
 
+    console.log(pool.name, isDolomitePool, pool.beefyFee, HPY, simpleApr, vaultApr, vaultApy, totalApy)
     // Add token to APYs object
     result.apys[pool.name] = totalApy;
     result.apyBreakdowns[pool.name] = {
